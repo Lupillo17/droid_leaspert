@@ -19,8 +19,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.iteneum.designsystem.ui.theme.CardIconTextBackGroundColor
-import com.iteneum.designsystem.ui.theme.CardIconTextContentColor
+import com.iteneum.designsystem.theme.IconTextCardBackGroundColor
+import com.iteneum.designsystem.theme.IconTextCardContentColor
+import com.iteneum.designsystem.theme.LPTypography
 
 
 @Composable
@@ -64,14 +65,14 @@ fun LpIconTextCard(
             .height(120.dp)
             .heightIn(120.dp, 250.dp)
             .padding(8.dp),
-        border = BorderStroke(1.dp, CardIconTextContentColor),
+        border = BorderStroke(1.dp, IconTextCardContentColor),
         shape = RoundedCornerShape(12.dp),
         onClick = { onCardClick(description) },
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(CardIconTextBackGroundColor),
+                .background(IconTextCardBackGroundColor),
             contentAlignment = Alignment.Center,
 
             ) {
@@ -82,9 +83,13 @@ fun LpIconTextCard(
                 Icon(
                     imageVector = icon,
                     contentDescription = description,
-                    tint = CardIconTextContentColor
+                    tint = IconTextCardContentColor
                 )
-                Text(text = description)
+                Text(
+                    text = description,
+                    style = LPTypography.bodyLarge,
+                    color = IconTextCardContentColor
+                )
             }
         }
     }

@@ -13,3 +13,7 @@ val JuneBud = Color(0xFFC8DD52)
 val Boulder = Color(0xFF787878)
 val SoftPeach = Color(0xFFEEEEEE)
 val RedSalsa = Color(0xFFE85151)
+
+// IconTextCard
+val IconTextCardBackGroundColor = Color(0xFFFAFCF0)
+val IconTextCardContentColor = Color(0xFF808945)
