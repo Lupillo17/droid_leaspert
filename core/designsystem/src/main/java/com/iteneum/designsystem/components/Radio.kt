@@ -1,8 +1,13 @@
 package com.iteneum.designsystem.components
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -36,6 +41,9 @@ fun LpRadioGroup(
                 RadioButton(
                     selected = (option == selectedOption),
                     onClick = null,
+                    colors = RadioButtonDefaults.colors(
+                        selectedColor = MaterialTheme.colorScheme.secondary
+                    )
                 )
                 Text(text = option, Modifier.padding(start = 10.dp))
             }
@@ -48,7 +56,7 @@ fun LpRadioGroup(
 @Preview
 @Composable
 fun RadioButtonExample() {
-    val options = listOf("Yes", "No","X","Y")
+    val options = listOf("Yes", "No", "X", "Y")
     var selectedOption by remember { mutableStateOf(options[0]) }
 
     LpRadioGroup(
